@@ -11,8 +11,8 @@ class HomeController extends Controller
         return view('frontend/home');
     }
 
-    public function login(Request $request)
+    public function page_not_found(Request $request)
     {
-        return view('frontend/auth/login');
+        return view('frontend/page_not_found');
     }
 }

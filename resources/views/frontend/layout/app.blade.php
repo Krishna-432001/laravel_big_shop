@@ -25,6 +25,7 @@
     @include('frontend.layout.header')
 
     @if (Request::is('login') || Request::is('register') || Request::is('forget_password') || Request::is('reset_password') || Request::is('page_terms')  || Request::is('about')  || Request::is('account') )    
+        
         @yield('content')
 
     @elseif(Request::is('/'))
@@ -69,6 +70,10 @@
             <!--End 4 columns-->
 
         </main>
+
+    @else
+
+        @yield('content')
 
     @endif    
     

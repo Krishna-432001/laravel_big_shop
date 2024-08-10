@@ -10,6 +10,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*');
+
 use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'login'])->name('home.login');
