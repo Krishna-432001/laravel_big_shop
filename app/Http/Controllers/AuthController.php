@@ -31,5 +31,15 @@ class AuthController extends Controller
         return view('frontend/auth/page_terms');
     }
 
+    public function about(Request $request)
+    {
+        return view('frontend/auth/about');
+    }
+
+    public function account(Request $request)
+    {
+        return view('frontend/auth/account');
+    }
+
 
 }

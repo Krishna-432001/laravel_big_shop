@@ -21,3 +21,7 @@ Route::get('/forget_password', [AuthController::class, 'forget_password'])->name
 Route::get('/reset_password', [AuthController::class, 'reset_password'])->name('home.reset_password');
 
 Route::get('/page_terms', [AuthController::class, 'page_terms'])->name('home.page_terms');
+
+Route::get('/about', [AuthController::class, 'about'])->name('home.about');
+
+Route::get('/account', [AuthController::class, 'account'])->name('home.account');
