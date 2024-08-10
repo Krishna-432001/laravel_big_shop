@@ -24,7 +24,16 @@
     <!-- Include the Header partial -->
     @include('frontend.layout.header')
 
-    @if (Request::is('login') || Request::is('register') || Request::is('forget_password') || Request::is('reset_password') || Request::is('page_terms')  || Request::is('about')  || Request::is('account') )    
+    @if (
+        Request::is('login') || 
+        Request::is('register') || 
+        Request::is('forget_password') || 
+        Request::is('reset_password') || 
+        Request::is('page_terms')  || 
+        Request::is('about')  || 
+        Request::is('account') || 
+        Request::is('privacy_policy') 
+    )    
         
         @yield('content')
 
