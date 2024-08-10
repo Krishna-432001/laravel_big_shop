@@ -32,11 +32,17 @@
         <!-- Include the feature categories slider partial -->
         @include('frontend.slider.feature_categories.type1')
 
-         <!-- Include the banner slider partial -->
-         @include('frontend.slider.banner.type1')
+        <!-- Include the banner slider partial -->
+        @include('frontend.slider.banner.type1')
 
-         <!-- Include the popular product slider partial -->
-         @include('frontend.slider.popular_product.type1')
+        <!-- Include the popular product slider partial -->
+        @include('frontend.slider.popular_product.type1')
+
+        <!-- Include the daily best sells slider partial -->
+        @include('frontend.slider.daily_best_sells.type1')
+
+        <!-- Include the popular product slider partial -->
+        @include('frontend.slider.deal_of_the_day.type1')
 
     </main>
 
