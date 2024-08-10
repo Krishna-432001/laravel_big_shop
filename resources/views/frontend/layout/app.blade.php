@@ -24,7 +24,7 @@
     <!-- Include the Header partial -->
     @include('frontend.layout.header')
 
-    @if (Request::is('login') || Request::is('register') || Request::is('forget_password') )    
+    @if (Request::is('login') || Request::is('register') || Request::is('forget_password') || Request::is('reset_password') || Request::is('page_terms') )    
         @yield('content')
 
     @elseif(Request::is('/'))
