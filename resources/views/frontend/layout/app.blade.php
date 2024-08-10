@@ -41,7 +41,7 @@
         <!-- Include the daily best sells slider partial -->
         @include('frontend.slider.daily_best_sells.type1')
 
-        <!-- Include the popular product slider partial -->
+        <!-- Include the popular deal_of_the_day slider partial -->
         @include('frontend.slider.deal_of_the_day.type1')
 
         <section class="section-padding mb-30">
@@ -49,6 +49,9 @@
                 <div class="row">
                     <!-- Include the top_selling slider partial -->
                     @include('frontend.slider.top_selling.type1')
+
+                    <!-- Include the trending_products slider partial -->
+                    @include('frontend.slider.trending_products.type1')
                 </div>
             </div>
         </section>
