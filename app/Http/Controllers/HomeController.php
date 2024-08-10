@@ -4,13 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Product;
+use App\Models\Category;
+
 class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        return view('frontend/home');
+        $categories= Category::all();
+
+        $query = Product::query();
+
+        // Apply filters based on the request
+        if ($request->has('category') && $request->category != 'All') {
+            $query->where('category_id', $request->category);
+        }
+
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $query->where('name', 'like', "%{$searchTerm}%");
+        }
+
+        $data = [
+            'product' => $query->get(),
+            'categories' => $categories
+        ];
+
+        return view('frontend/home', $data);
     }
-    
+
     public function page_terms(Request $request)
     {
         return view('frontend/auth/page_terms');
@@ -34,6 +56,6 @@ class HomeController extends Controller
 
     public function page_not_found(Request $request)
     {
-        return view('frontend/page_not_found');
+        return view('frontend/error/page_not_found');
     }
 }
