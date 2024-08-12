@@ -72,19 +72,14 @@
                 </div>
                 <div class="header-right">
                     <div class="search-style-2">
-                        <form action="#">
-                            <select class="select-active">
-                                <option>All Categories</option>
-                                <option>Milks and Dairies</option>
-                                <option>Wines & Alcohol</option>
-                                <option>Clothing & Beauty</option>
-                                <option>Pet Foods & Toy</option>
-                                <option>Fast food</option>
-                                <option>Baking material</option>
-                                <option>Vegetables</option>
-                                <option>Fresh Seafood</option>
-                                <option>Noodles & Rice</option>
-                                <option>Ice cream</option>
+                        <form method="GET" action="{{ route('home.index') }}">
+                            <select class="select-active" name="category">
+                                <option value="All" {{ request()->input('category') == 'All' ? 'selected' : '' }}>All Categories</option> 
+                                @foreach($categories as $row)
+                                    <option value="{{ $row->id }}" {{ request()->input('row') == $row->name ? 'selected' : '' }}>
+                                        {{ $row->name }}
+                                    </option>
+                                @endforeach
                             </select>
                             <input type="text" placeholder="Search for items..." />
                         </form>
