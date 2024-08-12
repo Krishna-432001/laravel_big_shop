@@ -41,6 +41,7 @@ class HomeController extends Controller
         // Update products after applying filters
         $data['product'] = $query->get();
 
+
         // Return the appropriate view based on the category filter
         if ($request->has('category') && $request->category != 'All') {            
             return view('frontend/product/list/type1', $data);
