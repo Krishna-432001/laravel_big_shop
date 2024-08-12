@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 use App\Http\Controllers\HomeController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/page_terms', [HomeController::class, 'page_terms'])->name('home.page_terms');
 
