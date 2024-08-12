@@ -18,6 +18,8 @@ Route::get('/account', [HomeController::class, 'account'])->name('home.account')
 
 Route::get('/privacy_policy', [HomeController::class, 'privacy_policy'])->name('home.privacy_policy');
 
+Route::get('/purchase_guide', [HomeController::class, 'purchase_guide'])->name('home.purchase_guide');
+
 Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*');
 
 
