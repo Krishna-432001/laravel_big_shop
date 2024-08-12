@@ -15,6 +15,10 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="frontend/css/plugins/animate.min.css" />
     <link rel="stylesheet" href="frontend/css/main.css?v=5.3" />
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="frontend/css/plugins/slider-range.css" />
+    <link rel="stylesheet" href="frontend/css/main.css?v=5.3" />
 </head>
 <body>
 
@@ -36,9 +40,16 @@
     )    
         
         @yield('content')
+    
+    @elseif (
+        request()->query('category')
+    )    
+        
+        @yield('content')
 
     @elseif(Request::is('/'))
 
+        <!-- Content for the homepage -->
         <main class="main">
 
             <!-- Include the slider partial -->
@@ -106,6 +117,10 @@
     <script src="frontend/js/plugins/jquery.syotimer.min.js"></script>
     <script src="frontend/js/plugins/waypoints.js"></script>
     <script src="frontend/js/plugins/wow.js"></script>
+
+    <script src="frontend/js/plugins/slider-range.js"></script>
+
+
     <script src="frontend/js/plugins/perfect-scrollbar.js"></script>
     <script src="frontend/js/plugins/magnific-popup.js"></script>
     <script src="frontend/js/plugins/select2.min.js"></script>
@@ -120,5 +135,7 @@
     <!-- Template  JS -->
     <script src="frontend/js/main.js?v=5.3"></script>
     <script src="frontend/js/shop.js?v=5.3"></script>
+
+    
 </body>
 </html>

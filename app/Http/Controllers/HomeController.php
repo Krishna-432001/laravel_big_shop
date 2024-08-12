@@ -11,27 +11,45 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $categories= Category::all();
-
+        // Retrieve all categories for use in the view
+        $categories = Category::all();
+        
+        // Start building the query for products
         $query = Product::query();
-
-        // Apply filters based on the request
-        if ($request->has('category') && $request->category != 'All') {
-            $query->where('category_id', $request->category);
-        }
-
+        
+        // Initialize data array
+        $data = [
+            'product' => $query->get(),
+            'categories' => $categories,
+        ];
+        
+        // Apply search filter if search term is present
         if ($request->has('search')) {
             $searchTerm = $request->input('search');
             $query->where('name', 'like', "%{$searchTerm}%");
         }
 
-        $data = [
-            'product' => $query->get(),
-            'categories' => $categories
-        ];
+        // Apply category filter if category is present and is not 'All'
+        if ($request->has('category') && $request->category != 'All') {
+            $query->where('category_id', $request->category);
+            
+            // Set page title based on the selected category
+            $category = Category::find($request->category);
+            $data['page_title'] = $category ? $category->name : 'Category';
+        }
+        
+        // Update products after applying filters
+        $data['product'] = $query->get();
 
+        // Return the appropriate view based on the category filter
+        if ($request->has('category') && $request->category != 'All') {            
+            return view('frontend/product/list/type1', $data);
+        }
+        
         return view('frontend/home', $data);
     }
+
+
 
     public function page_terms(Request $request)
     {
