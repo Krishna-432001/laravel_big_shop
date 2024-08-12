@@ -26,7 +26,6 @@ class AuthController extends Controller
         return view('frontend/auth/reset_password');
     }
 
-    
-
+  
 
 }
