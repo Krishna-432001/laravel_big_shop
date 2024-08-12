@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 
+use App\Models\City;
+
 class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        // Retrieve all cities for use in the view
+        $cities = City::all();
+
         // Retrieve all categories for use in the view
         $categories = Category::all();
         
@@ -21,7 +26,8 @@ class HomeController extends Controller
         $data = [
             'product' => $query->get(),
             'categories' => $categories,
-        ];
+            'cities' => $cities,
+         ];
         
         // Apply search filter if search term is present
         if ($request->has('search')) {

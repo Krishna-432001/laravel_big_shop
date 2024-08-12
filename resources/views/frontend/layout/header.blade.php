@@ -90,19 +90,11 @@
                                 <form action="#">
                                     <select class="select-active">
                                         <option>Your Location</option>
-                                        <option>Alabama</option>
-                                        <option>Alaska</option>
-                                        <option>Arizona</option>
-                                        <option>Delaware</option>
-                                        <option>Florida</option>
-                                        <option>Georgia</option>
-                                        <option>Hawaii</option>
-                                        <option>Indiana</option>
-                                        <option>Maryland</option>
-                                        <option>Nevada</option>
-                                        <option>New Jersey</option>
-                                        <option>New Mexico</option>
-                                        <option>New York</option>
+                                        @foreach($cities as $row)
+                                            <option value="{{ $row->id }}" {{ request()->input('row') == $row->name ? 'selected' : '' }}>
+                                                {{ $row->name }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </form>
                             </div>
