@@ -108,7 +108,7 @@
                                     <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
                                 </div>
                                 <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Hot</span>
+                                    <span class="hot">{{ $item->productLabel()->pluck('name')->implode(',') }}</span>
                                 </div>
                             </div>
                             <div class="product-content-wrap">
