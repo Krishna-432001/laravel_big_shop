@@ -20,7 +20,10 @@ class HomeController extends Controller
         $categories = Category::all();
         
         // Start building the query for products
-        $query = Product::query();
+        // $query = Product::query();
+
+        // Start building the query for products
+        $query = Product::with('productLabel'); // Eager load productLabels        
         
         // Initialize data array
         $data = [
@@ -53,6 +56,7 @@ class HomeController extends Controller
         // Update products after applying filters
         $data['product'] = $query->get();        
 
+        // dd($data['product']);
 
         // Return the appropriate view based on the category filter
         if ($request->has('category') && $request->category != 'All') {            

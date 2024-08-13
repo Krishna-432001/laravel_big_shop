@@ -113,7 +113,7 @@
                             </div>
                             <div class="product-content-wrap">
                                 <div class="product-category">
-                                    <a href="shop-grid-right.html">Snack</a>
+                                    <a href="shop-grid-right.html">{{ $item->category()->pluck('name')->implode(', ') }}</a>
                                 </div>
                                 <h2><a href="shop-product-right.html">{{ $item->name }}</a></h2>
                                 <div class="product-rate-cover">
