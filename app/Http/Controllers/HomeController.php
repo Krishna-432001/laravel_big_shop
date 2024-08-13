@@ -42,6 +42,9 @@ class HomeController extends Controller
             // Set page title based on the selected category
             $category = Category::find($request->category);
             $data['page_title'] = $category ? $category->name : 'Category';
+            $data['product_count'] = $category ? $category->products()->count() : 0;
+
+            // dd($category->products()->count());
         }
         
         // Update products after applying filters
