@@ -46,7 +46,7 @@
     )    
         
         @yield('content')
-
+            
     @elseif(Request::is('/'))
 
         <!-- Content for the homepage -->
