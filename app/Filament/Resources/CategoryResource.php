@@ -65,6 +65,9 @@ class CategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('product_count')
+                    ->getStateUsing(fn (Category $category): string => $category->products()->count())
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image_path')
