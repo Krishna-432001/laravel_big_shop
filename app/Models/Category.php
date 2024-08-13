@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class Category extends Model
 {
     use HasFactory;
+
     protected $fillable=[
         'name',
         'image_path',
@@ -40,5 +41,11 @@ class Category extends Model
     {
         return $this->hasMany(SubCategory::class);
     }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_categories');
+    }
+
     
 }
