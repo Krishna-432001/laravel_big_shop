@@ -97,7 +97,7 @@
                         <div class="product-cart-wrap mb-30">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
+                                    <a href="{{ route('product.show', $item->id) }}">
                                         <img class="default-img" src="frontend/imgs/shop/product-1-1.jpg" alt="" />
                                         <img class="hover-img" src="frontend/imgs/shop/product-1-2.jpg" alt="" />
                                     </a>
@@ -115,7 +115,7 @@
                                 <div class="product-category">
                                     <a href="shop-grid-right.html">{{ $item->category()->pluck('name')->implode(', ') }}</a>
                                 </div>
-                                <h2><a href="shop-product-right.html">{{ $item->name }}</a></h2>
+                                <h2><a href="{{ route('product.show', $item->id) }}">{{ $item->name }}</a></h2>
                                 <div class="product-rate-cover">
                                     <div class="product-rate d-inline-block">
                                         <div class="product-rating" style="width: 90%"></div>
@@ -123,7 +123,7 @@
                                     <span class="font-small ml-5 text-muted"> (4.0)</span>
                                 </div>
                                 <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">NestFood</a></span>
+                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">{{ $item->productCompany()->pluck('name')->implode(',')}}</a></span>
                                 </div>
                                 <div class="product-card-bottom">
                                     <div class="product-price">

@@ -9,6 +9,8 @@ use App\Models\Category;
 
 use App\Models\City;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class HomeController extends Controller
 {
     public function index(Request $request)
@@ -64,6 +66,36 @@ class HomeController extends Controller
         }
         
         return view('frontend/home', $data);
+    }
+
+    public function show($id)
+    {
+        
+
+        try {            
+
+            // Retrieve all cities for use in the view
+            $cities = City::all();
+
+            // Retrieve all categories for use in the view
+            $categories = Category::all();
+
+            $product = Product::findOrFail($id);
+
+            // Initialize data array
+            $data = [
+                'product' => $product,
+                'categories' => $categories,
+                'cities' => $cities,
+            ];
+
+            // dd($data);
+
+            return view('frontend/product/detail/type1', $data);
+        } catch (ModelNotFoundException $e) {
+            // Handle the case where the product is not found
+            return redirect()->route('products.index')->with('error', 'Product not found.');
+        }
     }
 
 
