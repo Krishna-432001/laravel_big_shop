@@ -27,16 +27,24 @@ class FrontendLoginTest extends DuskTestCase
                 ->pause(1000) // Optional: pause to visually confirm the modal is closed
                 ->assertMissing('#onloadModal') // Assert that the modal is no longer visible
                 ->assertSee('Login')
-                ->screenshot('login_page');;
+                ->screenshot('login_page');
         });
     }
 
-    // public function testVisitRegisterPage(): void
-    // {
-    //     $this->browse(function (Browser $browser) {
-    //         $browser->visit('/register')->assertSee('Register')->screenshot('register_page');;
-    //     });   
-    // }
+    public function testVisitRegisterPage(): void
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/register')                
+                ->pause(2000) // Pause for 1000 milliseconds (1 second)
+                ->waitFor('#onloadModal') // Wait for the modal to appear
+                ->assertVisible('#onloadModal') // Ensure the modal is visible
+                ->press('.btn-close') // Press the close button
+                ->pause(1000) // Optional: pause to visually confirm the modal is closed
+                ->assertMissing('#onloadModal') // Assert that the modal is no longer visible
+                ->assertSee('Register')
+                ->screenshot('register_page');
+        });   
+    }
 
     // public function testVisitForgetPasswordPage(): void
     // {
