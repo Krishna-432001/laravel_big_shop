@@ -29,6 +29,8 @@ Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*
 
 use App\Http\Controllers\AuthController;
 
+
+
 Route::get('/login', [AuthController::class, 'login'])->name('home.login');
 
 Route::get('/register', [AuthController::class, 'register'])->name('home.register');
