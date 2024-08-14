@@ -23,13 +23,7 @@ Route::get('/privacy_policy', [HomeController::class, 'privacy_policy'])->name('
 
 Route::get('/purchase_guide', [HomeController::class, 'purchase_guide'])->name('home.purchase_guide');
 
-Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*');
-
-
-
 use App\Http\Controllers\AuthController;
-
-
 
 Route::get('/login', [AuthController::class, 'login'])->name('home.login');
 
@@ -38,4 +32,11 @@ Route::get('/register', [AuthController::class, 'register'])->name('home.registe
 Route::get('/forget_password', [AuthController::class, 'forget_password'])->name('home.forget_password');
 
 Route::get('/reset_password', [AuthController::class, 'reset_password'])->name('home.reset_password');
+
+
+Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*');
+
+
+
+
 
