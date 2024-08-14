@@ -163,6 +163,11 @@
                                 <a href="page-account.html"><span class="lable ml-0">Account</span></a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
+                                        @guest
+                                        <li>
+                                            <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>Login / Register</a>
+                                        </li>
+                                        @endguest
                                         <li>
                                             <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a>
                                         </li>
