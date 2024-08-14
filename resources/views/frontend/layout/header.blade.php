@@ -168,6 +168,8 @@
                                             <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>Login / Register</a>
                                         </li>
                                         @endguest
+
+                                        @if (Auth::check())
                                         <li>
                                             <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a>
                                         </li>
@@ -186,6 +188,7 @@
                                         <li>
                                             <a href="page-login.html"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
