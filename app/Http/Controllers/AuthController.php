@@ -32,7 +32,20 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        return view('frontend/auth/register');
+        // dd($request);
+        // Retrieve all cities for use in the view
+        $cities = City::all();
+
+        // Retrieve all categories for use in the view
+        $categories = Category::all();
+
+
+        // Initialize data array
+        $data = [
+            'categories' => $categories,
+            'cities' => $cities,
+         ];
+        return view('frontend/auth/register',$data);
     }
 
     public function forget_password(Request $request)
