@@ -165,7 +165,11 @@
                                     <ul>
                                         @guest
                                         <li>
-                                            <a href="{{ route('home.login') }}"><i class="fi fi-rs-user mr-10"></i>Login / Register</a>
+                                            <a href="{{ route('home.login') }}"><i class="fi fi-rs-user mr-10"></i>Login </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ route('home.register') }}"><i class="fi fi-rs-user mr-10"></i>Register</a>
                                         </li>
                                         @endguest
 
