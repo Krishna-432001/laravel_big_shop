@@ -58,6 +58,26 @@ class AuthController extends Controller
         return view('frontend/auth/reset_password');
     }
 
+    public function my_account(Request $request)
+    {
+        // dd($request);
+        // Retrieve all cities for use in the view
+        $cities = City::all();
+
+        // Retrieve all categories for use in the view
+        $categories = Category::all();
+
+
+        // Initialize data array
+        $data = [
+            'categories' => $categories,
+            'cities' => $cities,
+         ];
+         
+        return view('frontend/auth/my_account',$data);
+    }
+
+
   
 
 }

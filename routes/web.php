@@ -29,9 +29,13 @@ Route::get('/login', [AuthController::class, 'login'])->name('home.login');
 
 Route::get('/register', [AuthController::class, 'register'])->name('home.register');
 
+Route::get('/my_account', [AuthController::class, 'my_account'])->name('home.my_account');
+
 Route::get('/forget_password', [AuthController::class, 'forget_password'])->name('home.forget_password');
 
 Route::get('/reset_password', [AuthController::class, 'reset_password'])->name('home.reset_password');
+
+Route::get('/my_account', [AuthController::class, 'my_account'])->name('home.my_account');
 
 
 Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*');
