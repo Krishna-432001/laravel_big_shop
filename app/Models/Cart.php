@@ -26,7 +26,7 @@ class Cart extends Model
 
     public function totalPrice()
     {
-        return $this->qty = $this->product->price;
+        return $this->qty * $this->product->price;
     }
     
 
