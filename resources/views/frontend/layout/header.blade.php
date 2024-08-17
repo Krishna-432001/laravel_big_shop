@@ -8,7 +8,7 @@
                 <div class="col-xl-3 col-lg-4">
                     <div class="header-info">
                         <ul>
-                            <li><a href="page-about.htlm">About Us</a></li>
+                            <li><a href="{{ route('home.about') }}">About Us</a></li>
                             <li><a href="{{ route('home.my_account') }}">My Account</a></li>
                             <li><a href="shop-wishlist.html">Wishlist</a></li>
                             <li><a href="shop-order.html">Order Tracking</a></li>
