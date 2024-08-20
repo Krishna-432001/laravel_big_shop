@@ -8,3 +8,6 @@
 
 ## register page
 ![Image](tests/Browser/screenshots/register_page.png)
+
+## laravel permission command
+ composer require spatie/laravel-permission
