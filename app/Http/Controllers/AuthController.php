@@ -159,6 +159,12 @@ class AuthController extends Controller
         return view('frontend/auth/reset_password');
     }
 
+    public function role(Request $request)
+    {
+        return view('frontend/auth/role');
+    }
+
+
     public function my_account(Request $request)
     {
         // dd($request);
