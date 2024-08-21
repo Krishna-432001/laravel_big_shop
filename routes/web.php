@@ -37,6 +37,8 @@ Route::post('/store', [AuthController::class, 'store'])->name('home.store');
 
 Route::get('/my_account', [AuthController::class, 'my_account'])->name('home.my_account');
 
+Route::get('/wishlist', [AuthController::class, 'wishlist'])->name('home.wishlist');
+
 Route::get('/forget_password', [AuthController::class, 'forget_password'])->name('home.forget_password');
 
 Route::get('/reset_password', [AuthController::class, 'reset_password'])->name('home.reset_password');

@@ -37,6 +37,7 @@
         Request::is('page_terms')  || 
         Request::is('about')  || 
         Request::is('account') || 
+        Request::is('wishlist') ||
         Request::is('privacy_policy') ||
         Request::routeIs('product.show')
     )    

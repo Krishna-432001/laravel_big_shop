@@ -10,7 +10,7 @@
                         <ul>
                             <li><a href="{{ route('home.about') }}">About Us</a></li>
                             <li><a href="{{ route('home.my_account') }}">My Account</a></li>
-                            <li><a href="shop-wishlist.html">Wishlist</a></li>
+                            <li><a href="{{ route('home.wishlist') }}">Wishlist</a></li>
                             <li><a href="shop-order.html">Order Tracking</a></li>
                         </ul>
                     </div>
@@ -106,11 +106,11 @@
                                 <a href="shop-compare.html"><span class="lable ml-0">Compare</span></a>
                             </div>
                             <div class="header-action-icon-2">
-                                <a href="shop-wishlist.html">
+                                <a href="{{ route('home.wishlist') }}">
                                     <img class="svgInject" alt="Nest" src="{{ asset('frontend/imgs/theme/icons/icon-heart.svg') }}" />
                                     <span class="pro-count blue">6</span>
                                 </a>
-                                <a href="shop-wishlist.html"><span class="lable">Wishlist</span></a>
+                                <a href="{{ route('home.wishlist') }}"><span class="lable">Wishlist</span></a>
                             </div>
                             @if (Auth::check())
                             <div class="header-action-icon-2">
@@ -177,7 +177,7 @@
                                             <a href="page-account.html"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
                                         </li>
                                         <li>
-                                            <a href="shop-wishlist.html"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
+                                            <a href="{{ route('home.wishlist') }}"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
                                         </li>
                                         <li>
                                             <a href="page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
