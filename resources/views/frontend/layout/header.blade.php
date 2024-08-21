@@ -139,7 +139,7 @@
                                     </ul>
                                     <div class="shopping-cart-footer">
                                         <div class="shopping-cart-total">
-                                            <h4>Total <span>₹ {{ $row->grandTotal(Auth::user()->id) }}</span></h4>
+                                            <h4>Total <span>₹ {{ Auth::user()->getCartGrandTotal() }}</span></h4>
                                         </div>
                                         <div class="shopping-cart-button">
                                             <a href="shop-cart.html" class="outline">View cart</a>

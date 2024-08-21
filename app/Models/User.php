@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cart::class,'customer_id');
     }
+
+    public function getCartGrandTotal()
+    {
+        return Cart::grandTotal($this->id);
+    }
 }
