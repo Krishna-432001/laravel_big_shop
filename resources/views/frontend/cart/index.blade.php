@@ -65,15 +65,22 @@
                                     <div class="detail-extralink mr-15">
                                         <div class="detail-qty border radius">
                                             <a href="{{ route('cart.decrease', $row->id) }}" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                            <input type="text" name="quantity" class="qty-val" value="1" min="1">
+                                            <input type="text" name="quantity" class="qty-val" value="{{ $row->qty }}" min="1">
                                             <a href="{{ route('cart.increase', $row->id) }}" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="price" data-title="Price">
-                                    <h4 class="text-brand">₹{{ $row->product->price}} </h4>
+                                    <h4 class="text-brand">₹{{ $row->totalPrice()}} </h4>
                                 </td>
-                                <td class="action text-center" data-title="Remove"><a href="{{ route('cart.remove', $row->id) }}" class="text-body"><i class="fi-rs-trash"></i></a></td>
+                                <td class="action text-center" data-title="Remove">
+                                    <form action="{{ route('cart.remove', $row->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove <i class="fi-rs-trash"></i></button>
+                                    </form>
+                                        
+                                </td>
                             </tr>
                             @endforeach
                                 
