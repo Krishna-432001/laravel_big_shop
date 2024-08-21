@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\Product;
 
+use App\Models\Category;
+
+use App\Models\Country;
+use App\Models\City;
+
 class CartController extends Controller
 {
     //
@@ -16,11 +21,25 @@ class CartController extends Controller
     {
         try 
         {
+            $countries = Country::all();
+            // Retrieve all cities for use in the view
+            $cities = City::all();
+
+            // Retrieve all categories for use in the view
+            $categories = Category::all();
+
             $customer = Auth::user();
 
             $carts = Cart::where('customer_id', $customer->id)->get();
 
-            return view('frontend.cart', compact('carts'));
+            $data = [
+                'carts' => $carts,
+                'categories' => $categories,
+                'countries' => $countries,
+                'cities' => $cities,
+             ];
+
+            return view('frontend.cart.index', $data);
         } catch (ModelNotFoundException $e) {
             // Handle the case where the product is not found
             return redirect()->route('products.index')->with('error', 'Product not found.');
