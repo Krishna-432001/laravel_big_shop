@@ -168,7 +168,7 @@
 
                                         @if (Auth::check())
                                         <li>
-                                            <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                            <a href="{{ route('home.my_account') }}"><i class="fi fi-rs-user mr-10"></i>My Account</a>
                                         </li>
                                         <li>
                                             <a href="page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a>
