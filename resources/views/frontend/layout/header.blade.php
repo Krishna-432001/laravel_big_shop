@@ -118,7 +118,7 @@
                                     <img alt="Nest" src="{{ asset('frontend/imgs/theme/icons/icon-cart.svg') }}" />
                                     <span class="pro-count blue">{{ Auth::user()->cart()->count() }}</span>
                                 </a>
-                                <a href="shop-cart.html"><span class="lable">Cart</span></a>
+                                <a href="{{ route('cart.index') }}"><span class="lable">Cart</span></a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         

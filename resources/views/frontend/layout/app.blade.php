@@ -39,6 +39,7 @@
         Request::is('account') || 
         Request::is('wishlist') ||
         Request::is('my_account') ||
+        Request::routeIs('cart.index') ||
         Request::is('privacy_policy') ||
         Request::routeIs('product.show')
     )    
