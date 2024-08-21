@@ -51,7 +51,7 @@ My account page
                                 <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h3 class="mb-0">Hello Rosie!</h3>
+                                            <h3 class="mb-0">Hello {{Auth::user()->email}}!</h3>
                                         </div>
                                         <div class="card-body">
                                             <p>
