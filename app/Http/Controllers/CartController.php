@@ -32,8 +32,11 @@ class CartController extends Controller
 
             $carts = Cart::where('customer_id', $customer->id)->get();
 
+            $cart_grand_total = Cart::grandTotal($customer->id);
+
             $data = [
                 'carts' => $carts,
+                'cart_grand_total' => $cart_grand_total,
                 'categories' => $categories,
                 'countries' => $countries,
                 'cities' => $cities,
