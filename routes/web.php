@@ -68,6 +68,31 @@ Route::delete('/cart/{id}', [CartController::class, 'removeFromCart'])->name('ca
 // Clear cart route
 Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 
+
+use App\Http\Controllers\OrderController;
+
+// Checkout Route
+Route::get('checkout', [OrderController::class, 'checkout'])->name('checkout');
+
+// Order Confirmation Route
+Route::post('place_an_order', [OrderController::class, 'place_an_order'])->name('order.place_an_order');
+
+// Order Confirmation Route
+Route::get('order/confirmation/{order}', [OrderController::class, 'confirmation'])->name('order.confirmation');
+
+Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
+
+
+
+
+
+// Order history Route
+Route::get('order/history/{id}', [OrderController::class, 'order_history'])->name('order.history');
+
+// Order show Route
+Route::get('/order/{id}', [OrderController::class, 'show'])->name('order.show');
+
+
 // Fallback route for 404
 Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*');
 
