@@ -40,6 +40,9 @@
         Request::is('wishlist') ||
         Request::is('my_account') ||
         Request::routeIs('cart.index') ||
+        Request::is('checkout') ||
+        Request::routeIs('order.place_an_order') ||
+        Request::routeIs('order.confirmation') ||
         Request::is('privacy_policy') ||
         Request::routeIs('product.show')
     )    
