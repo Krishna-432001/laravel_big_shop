@@ -142,7 +142,7 @@
                                             <h4>Total <span>₹ {{ Auth::user()->getCartGrandTotal() }}</span></h4>
                                         </div>
                                         <div class="shopping-cart-button">
-                                            <a href="shop-cart.html" class="outline">View cart</a>
+                                            <a href="{{ route('cart.index') }}" class="outline">View cart</a>
                                             <a href="shop-checkout.html">Checkout</a>
                                         </div>
                                     </div>
