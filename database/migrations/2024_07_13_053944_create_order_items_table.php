@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('qty');
             $table->decimal('unit_price', 10, 2);
             $table->decimal('amount', 10, 2);
-            $table->integer('discount');
+            $table->integer('discount')->nullable();
             $table->timestamps();
         });
     }
