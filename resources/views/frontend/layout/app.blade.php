@@ -43,6 +43,7 @@
         Request::is('checkout') ||
         Request::routeIs('order.place_an_order') ||
         Request::routeIs('order.confirmation') ||
+        Request::routeIs('invoice.show') ||
         Request::is('privacy_policy') ||
         Request::routeIs('product.show')
     )    
