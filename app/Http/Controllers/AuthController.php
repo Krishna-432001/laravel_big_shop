@@ -126,6 +126,7 @@ class AuthController extends Controller
                 'pincode' => $request->input('pincode'),
                 'country' => $request->input('country'),
             ]);
+            
 
             $selectedRole = Role::where('name', 'Customer')->first();
 
