@@ -9,6 +9,12 @@ use App\Models\OrderItem;
 use App\Helpers\BarcodeGenerator;
 use Illuminate\Support\Facades\Mail;
 
+
+use App\Models\Product;
+use App\Models\Category;
+
+use App\Models\City;
+
 class InvoiceController extends Controller
 {
 
@@ -23,8 +29,20 @@ class InvoiceController extends Controller
         // Generate UPI QR code
         $upi_qr = BarcodeGenerator::generateQRcode('9944177142@icici');
         
+
+        // Retrieve all cities for use in the view
+        $cities = City::all();
+
+        // Retrieve all categories for use in the view
+        $categories = Category::all();
+
         // Prepare data for the PDF
         $data = [
+
+            'categories' => $categories,
+            'cities' => $cities,
+
+
             'order' => $order,
             'order_items' => $order_items,
             'upi_qr' => $upi_qr
