@@ -11,6 +11,28 @@ use Illuminate\Support\Facades\Mail;
 
 class InvoiceController extends Controller
 {
+
+    public function viewInvoice($id)
+    {
+        // Find the order by its ID
+        $order = Order::findOrFail($id);
+        
+        // Get order items
+        $order_items = OrderItem::where('order_id', $order->id)->get();
+        
+        // Generate UPI QR code
+        $upi_qr = BarcodeGenerator::generateQRcode('9944177142@icici');
+        
+        // Prepare data for the PDF
+        $data = [
+            'order' => $order,
+            'order_items' => $order_items,
+            'upi_qr' => $upi_qr
+        ];
+
+        return view('frontend/invoice/show', $data);
+    }
+
     public function generateInvoicePdf($id)
     {
         // Find the order by its ID
