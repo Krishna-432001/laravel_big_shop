@@ -96,6 +96,7 @@ Route::get('/order/{id}', [OrderController::class, 'show'])->name('order.show');
 
 use App\Http\Controllers\InvoiceController;
 
+Route::get('/invoice/view-pdf/{id}', [InvoiceController::class, 'viewInvoice'])->name('invoice.view-pdf');
 Route::get('/invoice/generate-pdf/{id}', [InvoiceController::class, 'generateInvoicePdf'])->name('invoice.generate-pdf');
 Route::get('/invoice/download-pdf/{id}', [InvoiceController::class, 'downloadInvoicePdf'])->name('invoice.download-pdf');
 Route::get('/invoice/stream-pdf/{id}', [InvoiceController::class, 'streamInvoicePdf'])->name('invoice.stream-pdf');
