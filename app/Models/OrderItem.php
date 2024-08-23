@@ -32,4 +32,14 @@ class OrderItem extends Model
         return $this->belongsTo(Product::class);
     }
 
+    /**
+     * Get the subtotal for the order item.
+     *
+     * @return float
+     */
+    public function getSubtotalAttribute()
+    {
+        return ($this->unit_price * $this->qty) - $this->discount;
+    }
+
 }
