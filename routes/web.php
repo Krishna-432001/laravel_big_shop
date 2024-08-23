@@ -93,6 +93,34 @@ Route::get('order/history/{id}', [OrderController::class, 'order_history'])->nam
 Route::get('/order/{id}', [OrderController::class, 'show'])->name('order.show');
 
 
+
+use App\Http\Controllers\InvoiceController;
+
+Route::get('/invoice/generate-pdf/{id}', [InvoiceController::class, 'generateInvoicePdf'])->name('invoice.generate-pdf');
+Route::get('/invoice/download-pdf/{id}', [InvoiceController::class, 'downloadInvoicePdf'])->name('invoice.download-pdf');
+Route::get('/invoice/stream-pdf/{id}', [InvoiceController::class, 'streamInvoicePdf'])->name('invoice.stream-pdf');
+Route::get('/invoice/send-email/{id}', [InvoiceController::class, 'sendInvoiceEmail'])->name('invoice.send-email');
+
+
+use App\Http\Controllers\BarcodeController;
+Route::get('/generate-barcode/{productId}',[BarcodeController::class,'generateAndSaverProductBarCode'])->name('generate.barcode');
+
+Route::get('/generate-qrcode/{productId}',[BarcodeController::class,'generateAndSaverProductQRCode'])->name('generate.qrcode');
+
+
+
+use App\Http\Controllers\CityController;
+ 
+Route::get('/cities',[CityController::class,'index'])->name('ciities.index');
+
+Route::get('/city-info',[CityController::class,'cityInfoPage']);
+
+Route::get('/find-state-country/{city}',[CityController::class,'getCityIndo']);
+
+
+Route::get('/show-city-details/{city}', [CityController::class, 'showCityDetails']);
+
+
 // Fallback route for 404
 Route::get('{any}', [HomeController::class, 'page_not_found'])->where('any', '.*');
 
