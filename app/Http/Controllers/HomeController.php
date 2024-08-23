@@ -125,4 +125,19 @@ class HomeController extends Controller
         return view('frontend/auth/purchase_guide');
     }
 
+    public function sendEmailManually()
+    {
+        $recipient = 'vprabhu1771@gmail.com'; // Replace with actual recipient's email
+        $subject = 'Custom Subject';
+        $body = 'This is the body of the email. You can include HTML here if needed.';
+
+        Mail::raw($body, function(Message $message) use ($recipient, $subject) {
+            $message->to($recipient);
+            $message->subject($subject);
+            // You can add attachments or other options here if needed
+        });
+
+        return "Email sent successfully!";
+    }
+
 }
