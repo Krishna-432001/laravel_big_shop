@@ -11,3 +11,14 @@
 
 ## laravel permission command
  composer require spatie/laravel-permission
+
+## pdf composor install command
+
+ composer require barryvdh/laravel-dompdf
+
+ 
+## Class "Milon\Barcode\DNS2D" not found  composor install command
+
+ composer require milon/barcode
+
+ ## Install the kwn/number-to-words Package
