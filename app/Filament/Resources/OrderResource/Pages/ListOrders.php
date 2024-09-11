@@ -14,6 +14,8 @@ class ListOrders extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+
+            Actions\Action::make("Send Notification All")->url(fn (): string => route('send.notification.all')),
         ];
     }
 }
