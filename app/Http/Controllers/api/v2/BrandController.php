@@ -19,7 +19,7 @@ class BrandController extends Controller
             return[
                 'id'=>$brand->id,
                 'name'=>$brand->name,
-                // 'image_path'=>$brand->GetLogoImage(),
+                'image_path'=>$brand->GetLogoImage(),
             ];
         });
             
