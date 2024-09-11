@@ -108,6 +108,12 @@ Route::get('/generate-barcode/{productId}',[BarcodeController::class,'generateAn
 
 Route::get('/generate-qrcode/{productId}',[BarcodeController::class,'generateAndSaverProductQRCode'])->name('generate.qrcode');
 
+use App\Http\Controllers\NotificationController;
+
+Route::get('/send-notification', [NotificationController::class, 'sendNotification'])->name('send.notification.all');
+
+Route::get('/send-notification/{playerId}', [NotificationController::class, 'sendToUser']);
+
 
 
 use App\Http\Controllers\CityController;
