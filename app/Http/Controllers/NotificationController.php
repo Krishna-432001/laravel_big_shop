@@ -12,7 +12,7 @@ class NotificationController extends Controller
     public function sendNotification()
     {
         OneSignal::sendNotificationToAll(
-            "This is a test notification",
+            "welcome to big shop",
             $url = null,
             $data = null,
             $buttons = null,
